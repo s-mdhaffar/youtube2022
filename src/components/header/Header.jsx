@@ -67,16 +67,26 @@ const Header = ({type}) => {
             {type !== "list" && <> <h1 className="headerTitle">
             Stay more, save more. It’s Genius.
             </h1>
-            <p className="headerDesc">Enjoy discounts and travel rewards at hundreds of thousands of properties worldwide</p>
-            <button className="headerButton">Sign In / Register</button>
+            <p className="headerDesc">
+                Enjoy discounts and travel rewards at hundreds of thousands of properties worldwide
+                </p>
+            <button className="headerButton">
+                Sign In / Register
+                </button>
             <div className="headerSearch">
                 <div className="headerSearchItem">
                     <FontAwesomeIcon icon={faBed} className="headerIcon" />
-                    <input type="text" placeholder="Where are you going?" className="headerSearchInput" />
+                    <input type="text" 
+                    placeholder="Where are you going?" 
+                    className="headerSearchInput" />
                 </div>
                 <div className="headerSearchItem">
-                    <FontAwesomeIcon icon={faCalendarDays} className="headerIcon"/>
-                    <span onClick={()=>setOpenDate(!openDate)} className="headerSearchText">{`${format(date[0].startDate,"dd/MM/yyyy")} to ${format(date[0].endDate,"dd/MM/yyyy")}`} </span>
+                    <FontAwesomeIcon 
+                    icon={faCalendarDays} 
+                    className="headerIcon"/>
+                    <span 
+                    onClick={()=>setOpenDate(!openDate)} 
+                    className="headerSearchText">{`${format(date[0].startDate,"dd/MM/yyyy")} to ${format(date[0].endDate,"dd/MM/yyyy")}`} </span>
                     {openDate && <DateRange
                     editableDateInputs={true}
                     onChange={item => setDate([item.selection])}
@@ -87,7 +97,9 @@ const Header = ({type}) => {
                 </div>
                 <div className="headerSearchItem">
                     <FontAwesomeIcon icon={faPerson} className="headerIcon"/>
-                    <span onClick={()=>setOpenOptions(!openOptions)} className="headerSearchText">{`${options.Adult} Adult . ${options.Children} Children . ${options.Room} Room`} </span>
+                    <span 
+                    onClick={()=>setOpenOptions(!openOptions)} 
+                    className="headerSearchText">{`${options.Adult} Adult . ${options.Children} Children . ${options.Room} Room`} </span>
                     {openOptions && <div className="options">
                         <div className="optionItem">
                             <span className="optionText">Adult</span>
@@ -95,7 +107,11 @@ const Header = ({type}) => {
                                 <button disabled={options.Adult <= 1} className="optionCounterBtn" 
                                 onClick={()=>handleOperation("Adult","d")}>-</button>
                                 <span className="optionCounterNumber">{options.Adult}</span>
-                                <button className="optionCounterBtn" onClick={()=>handleOperation("Adult","i")}>+</button>
+                                <button 
+                                className="optionCounterBtn" 
+                                onClick={()=>handleOperation("Adult","i")}>
+                                    +
+                                    </button>
                             </div>
                         </div>
                         <div className="optionItem">
